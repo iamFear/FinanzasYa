@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+  font-size: 62.5%;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+h1 {
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+h2 {
+  color: #ccc;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.6rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.input-description {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.input-amount {
+  width: 20vw;
+  height: 3.5vh;
+  padding: 1.4rem 0.8rem;
+
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  background-color: #777;
+
+  border: 0;
+  border-radius: 5px;
+}
+
+.input-amount:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+form {
+  display: flex;
+  gap: 3.2rem;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.calculate-btn {
+  width: 14vw;
+  height: 5.5vh;
+
+  border: 0;
+  border-radius: 6px;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+
+  color: #fff;
+  background-color: blue;
+  transition: 0.15s;
+}
+
+.calculate-btn:hover {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.calculate-btn:active {
+  background-color: blue;
+}
