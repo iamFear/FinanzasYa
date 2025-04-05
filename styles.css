@@ -67,15 +67,6 @@ h2 {
   box-shadow: none;
 }
 
-form {
-  display: flex;
-  gap: 3.2rem;
-
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .calculate-btn {
   width: 14vw;
   height: 5.5vh;
@@ -98,4 +89,19 @@ form {
 
 .calculate-btn:active {
   background-color: blue;
+}
+
+.output {
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 600;
+  color: rgba(0, 218, 0, 0.7);
+}
+
+.output-error {
+  color: rgba(255, 0, 0, 0.7);
+}
+
+.hidden {
+  display: none;
 }

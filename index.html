@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FinanzasYa - Software Integral para Cuidar tus Finanzas</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -15,14 +16,21 @@
 
       <h2>Ingresa el dinero disponible en tu cuenta</h2>
 
-      <form>
-        <div class="input-container">
-          <span class="input-description">COP $</span>
-          <input type="number" step="any" class="input-amount" />
-        </div>
+      <div class="input-container">
+        <span class="input-description">COP $</span>
+        <input type="number" step="any" class="input-amount" />
+      </div>
 
-        <button class="calculate-btn">Calcular</button>
-      </form>
+      <button class="calculate-btn">Calcular</button>
+
+      <p class="output hidden">
+        La cantidad de dinero que puedes gastar <br />
+        diario es de COP $<span class="output-value"></span>
+      </p>
+
+      <p class="output output-error hidden">
+        Error, por favor introduce un numero valido para continuar.
+      </p>
     </div>
   </body>
 </html>
