@@ -1,0 +1,33 @@
+@media all and (max-width: 1000px) {
+  .calculate-btn {
+    width: 140px;
+  }
+
+  .input-amount {
+    width: 200px;
+  }
+}
+
+@media all and (max-width: 665px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media all and (max-width: 535px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media all and (max-width: 470px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media all and (max-width: 415px) {
+  html {
+    font-size: 35%;
+  }
+}
