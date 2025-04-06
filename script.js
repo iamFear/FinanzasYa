@@ -11,7 +11,7 @@ const outputValue = document.querySelector(".output-value");
 btn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const value = parseFloat(parseLocalizedNumber(input.value));
+  const value = parseLocalizedNumber(input.value);
 
   if (Number.isNaN(value)) {
     outputError.classList.remove("hidden");
