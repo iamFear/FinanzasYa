@@ -8,12 +8,10 @@ const output = document.querySelector(".output");
 const outputError = document.querySelector(".output-error");
 const outputValue = document.querySelector(".output-value");
 
-// Variables
-
 btn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const value = parseFloat(input.value);
+  const value = parseFloat(parseLocalizedNumber(input.value));
 
   if (Number.isNaN(value)) {
     outputError.classList.remove("hidden");
@@ -46,3 +44,26 @@ const getRemainingAmount = (currentAmount) => {
 
   return output;
 };
+
+function parseLocalizedNumber(input) {
+  if (typeof input !== "string") return NaN;
+
+  // Removemos espacios innecesarios
+  input = input.trim();
+
+  // Si contiene más comas que puntos, asumimos formato EU
+  const commaCount = (input.match(/,/g) || []).length;
+  const dotCount = (input.match(/\./g) || []).length;
+
+  let normalized = input;
+
+  if (commaCount > dotCount) {
+    // Estilo EU: cambiar "." por "" (miles), y "," por "." (decimal)
+    normalized = input.replace(/\./g, "").replace(/,/g, ".");
+  } else {
+    // Estilo US: quitar comas (miles)
+    normalized = input.replace(/,/g, "");
+  }
+
+  return parseFloat(normalized);
+}
