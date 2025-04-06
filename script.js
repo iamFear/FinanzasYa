@@ -48,22 +48,37 @@ const getRemainingAmount = (currentAmount) => {
 function parseLocalizedNumber(input) {
   if (typeof input !== "string") return NaN;
 
-  // Removemos espacios innecesarios
   input = input.trim();
 
-  // Si contiene más comas que puntos, asumimos formato EU
-  const commaCount = (input.match(/,/g) || []).length;
-  const dotCount = (input.match(/\./g) || []).length;
+  const lastComma = input.lastIndexOf(",");
+  const lastDot = input.lastIndexOf(".");
 
-  let normalized = input;
+  let decimalSeparator = null;
+  let thousandsSeparator = null;
 
-  if (commaCount > dotCount) {
-    // Estilo EU: cambiar "." por "" (miles), y "," por "." (decimal)
-    normalized = input.replace(/\./g, "").replace(/,/g, ".");
-  } else {
-    // Estilo US: quitar comas (miles)
-    normalized = input.replace(/,/g, "");
+  // Determinar cuál es el separador decimal (el último que aparece)
+  if (lastComma > lastDot) {
+    decimalSeparator = ",";
+    thousandsSeparator = ".";
+  } else if (lastDot > lastComma) {
+    decimalSeparator = ".";
+    thousandsSeparator = ",";
   }
 
-  return parseFloat(normalized);
+  // Si no hay separadores, intentamos convertir directamente
+  if (decimalSeparator === null) return parseFloat(input);
+
+  // Eliminamos todos los separadores de miles (anteriores al último separador)
+  const parts = input.split(decimalSeparator);
+  let integerPart = parts[0].replace(
+    new RegExp(`\\${thousandsSeparator}`, "g"),
+    ""
+  );
+  let decimalPart = parts[1] || "";
+
+  // Unimos usando punto como separador decimal universal
+  const normalized = `${integerPart}.${decimalPart}`;
+
+  const result = parseFloat(normalized);
+  return isNaN(result) ? NaN : result;
 }
