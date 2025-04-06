@@ -7,6 +7,8 @@ const input = document.querySelector(".input-amount");
 const output = document.querySelector(".output");
 const outputError = document.querySelector(".output-error");
 const outputValue = document.querySelector(".output-value");
+const btnSaveYes = document.querySelector(".save-btn--yes");
+const btnSaveNo = document.querySelector(".save-btn--no");
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();

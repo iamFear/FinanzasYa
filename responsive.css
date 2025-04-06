@@ -3,6 +3,10 @@
     width: 140px;
   }
 
+  .save-btns button {
+    width: 70px;
+  }
+
   .input-amount {
     width: 200px;
   }

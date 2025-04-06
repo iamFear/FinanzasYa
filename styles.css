@@ -67,28 +67,58 @@ h2 {
   box-shadow: none;
 }
 
-.calculate-btn {
-  width: 14vw;
+button {
   height: 5.5vh;
-
   border: 0;
   border-radius: 6px;
   font-size: 1.9rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.2rem;
+  transition: 0.15s;
+
+  color: #fff;
+}
+
+.calculate-btn,
+.calculate-btn:active {
+  width: 14vw;
 
   color: #fff;
   background-color: blue;
-  transition: 0.15s;
 }
 
 .calculate-btn:hover {
   background-color: rgba(0, 0, 255, 0.5);
 }
 
-:active {
-  background-color: blue;
+.save-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.save-btns button {
+  width: 6vw;
+}
+
+.save-btn--yes,
+.save-btn--yes:active {
+  background-color: oklch(72.3% 0.219 149.579);
+}
+
+.save-btn--no,
+.save-btn--no:active {
+  background-color: oklch(57.7% 0.245 27.325);
+}
+
+.save-btn--yes:hover {
+  background-color: oklch(36.15% 0.219 149.579);
+}
+
+.save-btn--no:hover {
+  background-color: oklch(28.85% 0.245 27.325);
 }
 
 .output {
